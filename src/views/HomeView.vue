@@ -48,6 +48,10 @@ export default {
     Bolme() {
       this.sonuc = parseFloat(this.sayi1) / parseFloat(this.sayi2);
     },
+    //  parseFloat, bir JavaScript fonksiyonudur ve bir dizeyi ondalık 
+    //  sayıya dönüştürmek için kullanılır. Bu fonksiyon, bir dize 
+    //  içindeki sayısal değeri çıkartır ve bu değeri bir ondalık 
+    //  sayıya dönüştürür.
   },
   components: {
     InputComponents,
