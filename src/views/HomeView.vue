@@ -6,24 +6,28 @@
 
     <!-- İşlem butonları -->
     <div class="btnContainer">
-      <button class="btn" @click="Toplama()">+</button>
-      <button class="btn" @click="Cikarma()">-</button>
-      <button class="btn" @click="Carpma()">×</button>
-      <button class="btn" @click="Bolme()">÷</button>
+      <ActionButton :click="Toplama" title="+" class="btn" />
+      <ActionButton :click="Cikarma" title="-" class="btn" />
+      <ActionButton :click="Carpma" title="x" class="btn" />
+      <ActionButton :click="Bolme" title="/" class="btn" />
     </div>
-
     <hr>
-
+    
     <!-- Sonuç gösterimi -->
     <div class="sonuc">{{ sonuc }}</div>
   </div>
 </template>
 <script>
+
 import ActionButton from '@/components/ActionButton.vue';
 import InputComponents from '@/components/InputComponents.vue'
 
 export default {
   name: 'Calculator',
+  components: {
+    ActionButton,
+    InputComponents
+  },
   data() {
     return {
       sayi1: null,
@@ -53,9 +57,8 @@ export default {
     //  içindeki sayısal değeri çıkartır ve bu değeri bir ondalık 
     //  sayıya dönüştürür.
   },
-  components: {
-    InputComponents,
-    ActionButton,
+  computed: {
+   
   }
 }
 </script>
@@ -65,6 +68,7 @@ export default {
 .Container {
   width: 200px;
 }
+
 .btnContainer {
   display: flex;
   width: 100%;
@@ -78,6 +82,7 @@ export default {
   height: 20px;
   color: #000;
 }
+
 .sonuc {
   height: 20px;
   margin-bottom: 10px;
